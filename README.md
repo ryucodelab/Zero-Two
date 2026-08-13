@@ -1,52 +1,121 @@
-![Enterprise](https://i.imgur.com/IYqzviU.jpg)
-# Zero Two (ゼロツー) bot // @ZeroTwoBot
+<p align="center">
+  <img src="https://github.com/ryucodelab/Zero-Two/blob/787fa910ace276007c17fccfa9ee70ee06b6cfe1/images.jpeg" alt="Zero Two Banner" width="100%">
+</p>
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Dank-del/)</br>
+<h1 align="center">Zero Two (ゼロツー)</h1>
 
+<p align="center">
+  A powerful, modular, anime-themed Telegram group management bot with anti-raid & sybil detection.
+</p>
 
-![Python Version](https://img.shields.io/badge/python-3.8-green?style=for-the-badge&logo=appveyor)
-![Issues](https://img.shields.io/github/issues/ryucodelab/Zero-Two?style=for-the-badge&logo=appveyor)
-![Forks](https://img.shields.io/github/forks/ryucodelab/Zero-Two?style=for-the-badge&logo=appveyor)
-![Stars](https://img.shields.io/github/stars/ryucodelab/Zero-Two?style=for-the-badge&logo=appveyor)
-![LICENSE](https://img.shields.io/github/license/ryucodelab/Zero-Two?style=for-the-badge&logo=appveyor)
-![Contributors](https://img.shields.io/github/contributors/ryucodelab/Zero-Two?style=for-the-badge&logo=appveyor)
-![Repository Size](https://img.shields.io/github/repo-size/ryucodelab/Zero-Two?style=for-the-badge&logo=appveyor)</br>
+<p align="center">
+  <a href="https://t.me/Codename002_bot"><img src="https://img.shields.io/badge/Telegram-Bot-blue?logo=telegram&style=for-the-badge" alt="Telegram Bot"></a>
+  <a href="https://t.me/pbshinigami"><img src="https://img.shields.io/badge/Support-Group-2CA5E0?logo=telegram&style=for-the-badge" alt="Support Group"></a>
+  <a href="https://github.com/ryucodelab/Zero-Two/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-green?style=for-the-badge" alt="License"></a>
+  <img src="https://img.shields.io/badge/Python-3.10%2B-yellow?logo=python&style=for-the-badge" alt="Python Version">
+  <img src="https://img.shields.io/badge/Maintained-Yes-brightgreen?style=for-the-badge" alt="Maintained">
+</p>
 
+---
 
-[![Join Support!](https://img.shields.io/badge/Support%20Chat-BlueBloodUnion-red)](https://t.me/pbshinigami)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cfb691a93a064d9ea753ef2b5fccf797)](https://www.codacy.com/manual/ryucodelab/Zero-Two?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ryucodelab/Zero-Two&amp;utm_campaign=Badge_Grade)
+## 📖 About
 
+**Zero Two** is a feature-rich Telegram group management bot built for communities that need reliable moderation tools, anti-raid protection, and a sybil-resistant defense system — wrapped in a clean, anime-inspired identity.
 
-A modular telegram Python bot running on python3 with an SQLalchemy database.
+Try the live bot here → **[@Codename002_bot](https://t.me/Codename002_bot)**
 
-Originally a marie fork - Zero Two has evolved further and was built to be more beneficial for Anime Chats.
+---
 
-It can be found on telegram as [Zero Two](https://t.me/zerotwobot).
+## ✨ Features
 
-⚠️ Warning: The support group does not provide assistance on forks, if you forked the code or ran your own custom bot you should know your way around the code.
+- 🛡️ Anti-raid & sybil detection system
+- 👮 Full group management & moderation toolkit
+- 🔨 Ban / mute / warn systems with logging
+- 🌐 Federation (Fed) ban support
+- 🧩 Modular, extensible codebase
+- ⚙️ Highly configurable via `config.ini`
 
-The Support group can be reached out to at [Blue Blood Union](https://t.me/pbshinigami), where you can ask for help setting up our bot in your group, discover/request new features, report bugs, and stay in the loop whenever a new update is available.
+---
 
+## 🚀 How to Setup
 
+```bash
+git clone https://github.com/ryucodelab/Zero-Two
+cd Zero-Two
+cp sample_config.ini config.ini
+```
 
-## Setting up the bot (Read this before trying to use!):
+Fill in all the required variables in `config.ini` (see the [Configuration](#-configuration) section below), then:
 
+```bash
+pip3 install -U -r requirements.txt
+python3 -m tg_bot
+```
 
-# How to setup
+---
 
-- `git clone https://github.com/ryucodelab/Zero-Two`
-- `cd Zero-Two`
-- `cp sample_config.ini config.ini`
-- *Fill in all the vars*
-- `pip3 install -U -r requirements.txt`
-- *And finally* `python3 -m tg_bot`
+## ⚙️ Configuration
 
-*Enjoy!*
+Edit your `config.ini` file with the following variables:
 
+| Variable | Description | Where to get it |
+|---|---|---|
+| `log` | Enable/disable logging | `True` / `False` |
+| `APP_ID` | Telegram App ID | [my.telegram.org](https://my.telegram.org) |
+| `API_HASH` | Telegram API Hash | [my.telegram.org](https://my.telegram.org) |
+| `TOKEN` | Your bot token | [@BotFather](https://t.me/BotFather) |
+| `OWNER_ID` | Your Telegram user ID | — |
+| `OWNER_USERNAME` | Your Telegram username | — |
+| `SQLALCHEMY_DATABASE_URI` | PostgreSQL database URL | Your DB provider |
+| `MESSAGE_DUMP` | Log group/channel ID | — |
+| `GBAN_LOGS` | Gban log group/channel ID | — |
+| `SYS_ADMIN` | Sudo/system admin user IDs | — |
+| `LOAD` | Modules to load (whitelist) | — |
+| `NO_LOAD` | Modules to skip loading | e.g. `sed` |
+| `WEBHOOK` | Enable webhook mode | `True` / `False` |
+| `SPB_MODE` | Single process bot mode | `True` / `False` |
+| `URL` | Webhook URL | — |
+| `INFOPIC` | Show profile picture on info command | `True` / `False` |
+| `CERT_PATH` | SSL certificate path | — |
+| `PORT` | Webhook port | e.g. `5000` |
+| `DEL_CMDS` | Auto-delete command messages | `True` / `False` |
+| `STRICT_GBAN` | Strict global ban enforcement | `True` / `False` |
+| `BAN_STICKER` | Custom sticker on ban | — |
+| `ALLOW_EXCL` | Allow `!` as command prefix | `True` / `False` |
+| `CUSTOM_CMD` | Enable custom command prefix | `True` / `False` |
+| `CASH_API_KEY` | Currency/stock API key | [AlphaVantage](https://www.alphavantage.co/support/#api-key) |
+| `TIME_API_KEY` | Timezone API key | [TimezoneDB](https://timezonedb.com/api) |
+| `WALL_API` | Wallpaper API key | [Alpha Coders](https://wall.alphacoders.com/api.php) |
+| `spamwatch_api` | SpamWatch API token | [@SpamWatchBot](https://t.me/SpamWatchBot) |
+| `SPAMMERS` | Manual spammer ID list | — |
+| `LASTFM_API_KEY` | Last.fm API key | [Last.fm API](https://www.last.fm/api/account/create) |
+| `BOT_API_URL` | Telegram Bot API base URL | `https://api.telegram.org/bot` |
+| `BOT_API_FILE_URL` | Telegram Bot API file URL | `https://api.telegram.org/file/bot` |
 
-For queries or any issues regarding the bot please open an issue ticket or visit us at [Blue Blood Union](https://t.me/pbshinigami)  
+> 💡 Leave a variable blank only if the module using it is not required for your deployment.
 
--------------------------------------------------------------------------------------
+---
 
-![Alt](https://repobeats.axiom.co/api/embed/d2897eb81239aab92e1394b6d833b19c8dbac24c.svg "Repobeats analytics image")
+## 💬 Support & Questions
+
+Got issues, questions, or want to hang out with the community?
+
+👉 Join our support group: **[@pbshinigami](https://t.me/pbshinigami)**
+
+---
+
+## 🙏 Credits
+
+This project stands on the shoulders of the developers who built and maintained the codebase this bot is forked from:
+
+- **[Marie](https://github.com/PaulSonOfLars/tgbot)** — Original bot framework
+- **[Rose](https://github.com/Marie-and-friends/Rose)** — Core feature contributions
+- **[Paul Larsen (PaulSonOfLars)](https://github.com/PaulSonOfLars)** — Creator of the original Marie/Rose codebase
+
+Without their foundational work, this project would not exist. All credit for the core architecture goes to the original authors and contributors.
+
+---
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/ryucodelab">ryucodelab</a> — part of the <b>Blue Blood Union</b> ecosystem
+</p>
