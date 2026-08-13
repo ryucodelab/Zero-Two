@@ -91,8 +91,15 @@ Edit your `config.ini` file with the following variables:
 | `LASTFM_API_KEY` | Last.fm API key | [Last.fm API](https://www.last.fm/api/account/create) |
 | `BOT_API_URL` | Telegram Bot API base URL | `https://api.telegram.org/bot` |
 | `BOT_API_FILE_URL` | Telegram Bot API file URL | `https://api.telegram.org/file/bot` |
+| `REDIS_URI` | Full Redis connection string (takes priority over the fields below) | Your Redis provider, e.g. `rediss://default:password@host:6379/0` |
+| `REDIS_HOST` | Redis host (used only if `REDIS_URI` is not set) | Default: `localhost` |
+| `REDIS_PORT` | Redis port (used only if `REDIS_URI` is not set) | Default: `6379` |
+| `REDIS_DB` | Redis database index (used only if `REDIS_URI` is not set) | Default: `0` |
+| `REDIS_PASSWORD` | Redis password (used only if `REDIS_URI` is not set) | — |
 
 > 💡 Leave a variable blank only if the module using it is not required for your deployment.
+
+> ⚙️ **Redis setup:** if you're using a hosted Redis provider (Upstash, Redis Cloud, Railway, etc.), just set `REDIS_URI` to the full connection string they give you — it's the easiest option and takes priority over the individual `REDIS_HOST`/`PORT`/`DB`/`PASSWORD` fields. Only fill in those separate fields if you're running Redis yourself without a single connection URI. Leaving both unset makes the bot fall back to `localhost:6379`.
 
 ---
 
