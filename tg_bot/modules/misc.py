@@ -372,7 +372,7 @@ def stats(update, context):
             "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS]) +
             "\n\n[⍙ GitHub](https://github.com/ryucodelab/Zero-Two)\n\n" +
-            "╘══「 by [Dank-del](github.com/Dank-del) 」\n",
+            "╘══「 by [Ryu-CodeLab](github.com/ryucodelab) 」\n",
         parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(kb), disable_web_page_preview=True)
     except BaseException:
         update.effective_message.reply_text(
@@ -384,7 +384,7 @@ def stats(update, context):
                     )
                     + "\n\n⍙ [GitHub](https://github.com/ryucodelab/Zero-Two)\n\n"
                 )
-                + "╘══「 by [Dank-del](github.com/Dank-del) 」\n"
+                + "╘══「 by [Ryu-CodeLab](github.com/ryucodelab) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(kb),
@@ -400,7 +400,7 @@ def ping(update: Update, _):
     end_time = time.time()
     ping_time = round((end_time - start_time) * 1000, 3)
     message.edit_text(
-        "*Pong!!!*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN
+        "*🏓Pong!!!*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN
     )
 
 
@@ -412,7 +412,7 @@ def pingCallback(update: Update, context: CallbackContext):
     requests.get('https://api.telegram.org')
     end_time = time.time()
     ping_time = round((end_time - start_time) * 1000, 3)
-    query.answer(f'Pong! {ping_time}ms')
+    query.answer(f'🏓Pong! {ping_time}ms')
 
 
 def get_help(chat):
